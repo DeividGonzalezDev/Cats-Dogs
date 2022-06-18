@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <script src="https://kit.fontawesome.com/362097a43f.js" crossorigin="anonymous"></script>
     <title>Cat&Dog</title>
 </head>
@@ -26,7 +28,7 @@
             <div class="logo">
                 <img src="img/Logo.png" alt="Logo">
             </div>
-            
+            <i class="fa-solid fa-bars menu" onclick="abrirCerrar()"></i>
             <nav>
                 <ul type="none">
                     <li><i class="fa-solid fa-paw"></i><a href="#">Categorias</a></li>
@@ -34,18 +36,29 @@
                     <li><i class="fa-solid fa-paw"></i><a href="#">Nosotros</a></li>
                     <li><i class="fa-solid fa-paw"></i><a href="#">Contactenos</a></li>
                 </ul>
-            </nav>                      
+            </nav> 
+           
         </section>
-
+        <section class="nav-banner-responsive ocultar">
+            <div class="menu-lateral">
+                <nav>
+                    <ul type="none">
+                        <li><i class="fa-solid fa-paw"></i><a href="#">Categorias</a></li>
+                        <li><i class="fa-solid fa-paw"></i><a href="#">Pets</a></li>
+                        <li><i class="fa-solid fa-paw"></i><a href="#">Nosotros</a></li>
+                        <li><i class="fa-solid fa-paw"></i><a href="#">Contactenos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
     </header>
 
     <main>
         <section class="slide">
-
             <div>
                 <h1>¡Es Un Placer Tenerte Aqui!</h1>
                 <p>Comederos en Descuento</p>
-                <button>COMEDEROS</button>
+                <button class="hover-button">COMEDEROS</button>
             </div>
             
         </section>
@@ -85,8 +98,8 @@
             <input type="text" placeholder="Introduce tu nombre" required>
             <input type="email" placeholder="Introduce tu email" required>
             <input type="tel" placeholder="introduce tu Telefono">
-            <button class="button-resetear boton">Resetear</button>
-            <button type="submit" class="button-enviar boton">Enviar</button>
+            <button class="button-resetear boton hover-button">Resetear</button>
+            <button type="submit" class="button-enviar boton hover-button">Enviar</button>
         </section>
 
         <section class="suscribete">
@@ -97,7 +110,7 @@
             
             <div>
                 <input type="email" placeholder="Introduce tu Correo Electronico">
-                <button type="submit">Suscribirme</button>
+                <button class="hover-button" type="submit">Suscribirme</button>
             </div>
         </section>
 
@@ -152,5 +165,18 @@
         </section>
 
     </footer>
+    <script>
+        let menuLateral = document.querySelector('.nav-banner-responsive');
+        let ocultar = "ocultar"
+        
+        function abrirCerrar(){
+            let detectarClase= menuLateral.classList[1] == 'ocultar'
+            if(detectarClase == true){
+                menuLateral.classList.replace("ocultar", "mostrar")
+            } else menuLateral.classList.replace("mostrar", "ocultar")
+            
+        }
+        
+    </script>
 </body>
 </html>
